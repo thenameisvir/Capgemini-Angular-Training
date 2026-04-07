@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Application Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <h2>User Application Form</h2>
+
+    <form action="" method="POST">
+
+        <!-- FIELDSET 1 — TEXT INPUTS -->
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="fullname">Full Name</label><br>
+            <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                placeholder="e.g. Madhur Solanki"
+            ><br>
+
+            <label for="email">Email Address</label><br>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="madhur@example.com"
+            ><br>
+
+            <label for="phone">Phone Number</label><br>
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+91 9876543210"
+            ><br>
+
+            <label for="dob">Date of Birth</label><br>
+            <input
+                type="date"
+                id="dob"
+                name="dob"
+                min="1950-01-01"
+                max="2010-12-31"
+            >
+            <small>Date must be between 1950 and 2010</small>
+
+        </fieldset>
+
+        <br>
+
+        <!-- FIELDSET 2 — MULTI SELECT -->
+        <fieldset>
+            <legend>Skills / Technologies</legend>
+
+            <label for="skills">
+                Select Skills &nbsp;—&nbsp;
+                Ctrl + Click (Windows) &nbsp;|&nbsp; Cmd + Click (Mac) for multiple
+            </label><br>
+
+            <select id="skills" name="skills" multiple size="18">
+
+                <optgroup label="── Frontend ──">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="react">React</option>
+                    <option value="vue">Vue.js</option>
+                </optgroup>
+
+                <optgroup label="── Backend ──">
+                    <option value="nodejs">Node.js</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="php">PHP</option>
+                    <option value="golang">Go</option>
+                </optgroup>
+
+                <optgroup label="── Database ──">
+                    <option value="mysql">MySQL</option>
+                    <option value="mongodb">MongoDB</option>
+                    <option value="postgresql">PostgreSQL</option>
+                    <option value="redis">Redis</option>
+                </optgroup>
+
+                <optgroup label="── DevOps ──">
+                    <option value="docker">Docker</option>
+                    <option value="kubernetes">Kubernetes</option>
+                    <option value="aws">AWS</option>
+                    <option value="git">Git</option>
+                </optgroup>
+
+            </select>
+
+        </fieldset>
+
+        <br>
+
+        <!-- FIELDSET 3 — FILE UPLOAD -->
+        <fieldset>
+            <legend>Upload Documents</legend>
+
+            <label for="pdf-upload">Upload Resume / Certificate *</label><br>
+            <input
+                type="file"
+                id="pdf-upload"
+                name="pdf-upload"
+                accept=".pdf,application/pdf"
+                required
+            >
+            <small>Only PDF files accepted &nbsp;|&nbsp; Max size: 5MB</small>
+
+        </fieldset>
+
+        <br>
+
+        <!-- FIELDSET 4 — INTERESTS CHECKBOXES -->
+        <fieldset>
+            <legend>Interests &amp; Hobbies</legend>
+
+            <p>Select all that apply:</p>
+
+            <input type="checkbox" id="coding"      name="interests" value="coding">
+            <label for="coding">Coding</label><br>
+
+            <input type="checkbox" id="gaming"      name="interests" value="gaming">
+            <label for="gaming">Gaming</label><br>
+
+            <input type="checkbox" id="reading"     name="interests" value="reading">
+            <label for="reading">Reading</label><br>
+
+            <input type="checkbox" id="music"       name="interests" value="music">
+            <label for="music">Music</label><br>
+
+            <input type="checkbox" id="travel"      name="interests" value="travel">
+            <label for="travel">Travel</label><br>
+
+            <input type="checkbox" id="sports"      name="interests" value="sports">
+            <label for="sports">Sports</label><br>
+
+            <input type="checkbox" id="cooking"     name="interests" value="cooking">
+            <label for="cooking">Cooking</label><br>
+
+            <input type="checkbox" id="photography" name="interests" value="photography">
+            <label for="photography">Photography</label>
+
+        </fieldset>
+
+        <br>
+
+        <!-- FIELDSET 5 — WORK MODE -->
+        <fieldset>
+            <legend>Preferred Work Mode</legend>
+
+            <p>Select all that apply:</p>
+
+            <input type="checkbox" id="remote"    name="workmode" value="remote">
+            <label for="remote">Remote</label><br>
+
+            <input type="checkbox" id="onsite"    name="workmode" value="onsite">
+            <label for="onsite">On-site</label><br>
+
+            <input type="checkbox" id="hybrid"    name="workmode" value="hybrid">
+            <label for="hybrid">Hybrid</label><br>
+
+            <input type="checkbox" id="freelance" name="workmode" value="freelance">
+            <label for="freelance">Freelance</label>
+
+        </fieldset>
+
+        <br>
+
+        <!-- FIELDSET 6 — AGREEMENTS -->
+        <fieldset>
+            <legend>Agreements</legend>
+
+            <br>
+            <input type="checkbox" id="terms" name="terms" value="agreed">
+            <label for="terms">I agree to the Terms &amp; Conditions and Privacy Policy</label><br>
+
+            <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked>
+            <label for="newsletter">Subscribe to newsletter &amp; updates</label>
+
+        </fieldset>
+
+        <br>
+
+        <!-- BUTTONS -->
+        <input type="submit" value="Submit Application">
+        &nbsp;&nbsp;
+        <input type="reset"  value="Reset Form">
+    </form>
+</body>
+</html>

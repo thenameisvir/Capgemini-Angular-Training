@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <form>
+
+        <!-- Title + Subtitle -->
+        <div class="form-card">
+            <div class="form-title">Application Details</div>
+            <div class="form-subtitle">Please fill in the details below to complete your application</div>
+        </div>
+
+
+        <!--First Name + Last Name-->
+        <div class="row">
+
+            <div class="field">
+                <label>First Name <span class="req">*</span></label>
+                <input type="text" id="fname" placeholder="Madhur" required />
+            </div>
+
+
+            <div class="field">
+                <div class="field">
+                    <label>First Name <span class="req">*</span></label>
+                <input type="text" id="fname" placeholder="Solanki" required />
+                </div>
+
+        </div>
+
+        <!-- Email -->
+    <div class="field">
+        <label>Email Address <span class="req">*</span></label>
+        <input type="email" id="email" placeholder="rahul@example.com" />
+    </div>
+
+        <!-- Gender -->
+    <div class="field">
+        <label>Gender <span class="req">*</span></label>
+        <div class="radio-group" id="gender-group">
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+            <label><input type="radio" name="gender" value="other"> Other</label>
+            <label><input type="radio" name="gender" value="pnts"> Prefer not to say</label>
+        </div>
+    </div>
+
+    <!-- Phone -->
+    <div class="field">
+        <label>Phone Number</label>
+        <input type="tel" id="phone" placeholder="+91 9*********" pattern="[0-9]{10}" maxlength="10" minlength="10"/>
+    </div>
+
+    </form>
+
+    <!-- DOB -->
+    <div class="field">
+        <label>Date of Birth</label>
+        <input type="date" id="dob" min="1950-01-01" max="2010-12-31" />
+        <div class="hint">Date between 1950 and 2010 only</div>
+    </div>
+
+    <!-- Subjects -->
+    <div class="field">
+        <label>Skills<span class="req">*</span></label>
+        <div class="radio-group" id="subjects-group">
+            <label><input type="radio" name="subject" value="JavaScript"> JS</label>
+            <label><input type="radio" name="subject" value="Java"> Java</label>
+            <label><input type="radio" name="subject" value="React"> React</label>
+            <label><input type="radio" name="subject" value="Express"> Express</label>
+            <label><input type="radio" name="subject" value="Python"> Python</label>
+            <label><input type="radio" name="subject" value="SQL"> SQL</label>
+        </div>
+    </div>
+
+    <!-- Slider -->
+    <div class="field">
+    <label>Year of Experience:</label>
+    <input type="range" min="0" max="10" step="1">
+    </div>
+
+    
+
+    <div class="row">
+        <div class="field">
+            <label>Country <span class="req">*</span></label>
+            <select id="country">
+                <option value="" disabled selected>Default</option>
+                <optgroup label="Asia">
+                    <option>India</option>
+                    <option>China</option>
+                    <option>Japan</option>
+                    <option>South Korea</option>
+                    <option>Bangladesh</option>
+                </optgroup>
+                <optgroup label="Europe">
+                    <option>Germany</option>
+                    <option>France</option>
+                    <option>United Kingdom</option>
+                    <option>Italy</option>
+                    <option>Spain</option>
+                </optgroup>
+                <optgroup label="North America">
+                    <option>United States</option>
+                    <option>Canada</option>
+                    <option>Mexico</option>
+                    <option>Cuba</option>
+                    <option>Jamaica</option>
+                </optgroup>
+                <optgroup label="Africa">
+                    <option>Nigeria</option>
+                    <option>South Africa</option>
+                    <option>Kenya</option>
+                    <option>Egypt</option>
+                    <option>Ghana</option>
+                </optgroup>
+            </select>
+        </div>
+        <div class="field">
+            <label>City</label>
+            <input type="text" id="city" placeholder="New Delhi" />
+        </div>
+    </div>
+
+    <!-- Address -->
+    <div class="field">
+        <label>Address</label>
+        <textarea id="address" placeholder="123, Main Street, New Delhi"></textarea>
+    
+    
+
+    <!-- Submit + Reset -->
+    <div class="btn-row">
+        <button type="button" class="submit-btn" onclick="submitForm()">Submit Application</button>
+        <button type="reset" class="reset-btn">Reset Form</button>
+    </div>
+    
+</body>
+</html>

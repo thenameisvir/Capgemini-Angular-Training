@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        <div class="form-card">
+    <div class="form-title">User Application Form</div>
+    <div class="form-subtitle">Fill in the details below to create your account</div>
+    <div class="divider"></div>
+
+    <!-- Title + Username -->
+    <div class="row">
+        <div class="field">
+            <label>Title <span class="req">*</span></label>
+            <select id="title">
+                <option value="" disabled selected>Select title</option>
+                <option>Mr.</option>
+                <option>Mrs.</option>
+                <option>Ms.</option>
+                <option>Dr.</option>
+                <option>Prof.</option>
+            </select>
+        </div>
+        <div class="field">
+            <label>Username <span class="req">*</span></label>
+            <input type="text" id="username" placeholder="e.g. Madhur" required />
+        </div>
+    </div>
+
+    <!-- First + Last Name -->
+    <div class="row">
+        <div class="field">
+            <label>First Name <span class="req">*</span></label>
+            <input type="text" id="fname" placeholder="Rahul" />
+        </div>
+        <div class="field">
+            <label>Last Name</label>
+            <input type="text" id="lname" placeholder="Sharma" />
+        </div>
+    </div>
+
+    <!-- Email -->
+    <div class="field">
+        <label>Email Address <span class="req">*</span></label>
+        <input type="email" id="email" placeholder="rahul@example.com" />
+    </div>
+
+    <!-- Phone -->
+    <div class="field">
+        <label>Phone Number</label>
+        <input type="tel" id="phone" placeholder="+91 9*********" pattern="[0-9]{10}" maxlength="10" minlength="10"/>
+    </div>
+
+    <!-- DOB -->
+    <div class="field">
+        <label>Date of Birth</label>
+        <input type="date" id="dob" min="1950-01-01" max="2010-12-31" />
+        <div class="hint">Date between 1950 and 2010 only</div>
+    </div>
+
+    <!-- Gender -->
+    <div class="field">
+        <label>Gender <span class="req">*</span></label>
+        <div class="radio-group" id="gender-group">
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+            <label><input type="radio" name="gender" value="other"> Other</label>
+            <label><input type="radio" name="gender" value="pnts"> Prefer not to say</label>
+        </div>
+    </div>
+
+    <!-- Country + City -->
+    <div class="row">
+        <div class="field">
+            <label>Country <span class="req">*</span></label>
+            <select id="country">
+                <option value="" disabled selected>Select country</option>
+                <optgroup label="Asia">
+                    <option>India</option>
+                    <option>China</option>
+                    <option>Japan</option>
+                    <option>South Korea</option>
+                    <option>Bangladesh</option>
+                </optgroup>
+                <optgroup label="Europe">
+                    <option>Germany</option>
+                    <option>France</option>
+                    <option>United Kingdom</option>
+                    <option>Italy</option>
+                    <option>Spain</option>
+                </optgroup>
+                <optgroup label="North America">
+                    <option>United States</option>
+                    <option>Canada</option>
+                    <option>Mexico</option>
+                    <option>Cuba</option>
+                    <option>Jamaica</option>
+                </optgroup>
+                <optgroup label="Africa">
+                    <option>Nigeria</option>
+                    <option>South Africa</option>
+                    <option>Kenya</option>
+                    <option>Egypt</option>
+                    <option>Ghana</option>
+                </optgroup>
+            </select>
+        </div>
+        <div class="field">
+            <label>City</label>
+            <input type="text" id="city" placeholder="New Delhi" />
+        </div>
+    </div>
+
+    <!-- Account Type -->
+    <div class="field">
+        <label>Account Type <span class="req">*</span> <span class="badge">Selected by default</span></label>
+        <select id="account-type">
+            <option value="" disabled>Choose type</option>
+            <option selected>Standard User</option>
+            <option disabled>Admin (disabled)</option>
+            <option>Premium User</option>
+            <option disabled>Super Admin (disabled)</option>
+        </select>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Password -->
+    <div class="field">
+        <label>Password<span class="req">*</span></label>
+        <input type="password" id="pwd-input" placeholder="Min 8 characters" oninput="checkStrength(this.value)" />
+        <div class="strength-bar"><div class="strength-fill" id="strength-fill"></div></div>
+        
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="field">
+        <label>Confirm Password <span class="req">*</span></label>
+        <input type="password" id="confirm-pwd" placeholder="Re-enter password" />
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- File Upload -->
+    <div class="field">
+        <label>Upload Resume / Certificate <span class="req">*</span></label>
+        <div class="file-box" onclick="document.getElementById('pdf-upload').click()">
+            <div style="font-size:20px;">📄</div>
+            <div class="file-box-text">Click to upload — only PDF accepted</div>
+            <input type="file" id="pdf-upload" accept=".pdf,application/pdf" onchange="showFileName(this)" style="display:none;" />
+            <div class="file-name" id="file-label">No file chosen</div>
+        </div>
+        <div class="hint">Max size: 5MB &nbsp;|&nbsp; Format: .pdf only</div>
+    </div>
+
+    <!-- Git URL -->
+    <!-- <div class="field">
+        <label>GitHub / GitLab Repository URL <span class="req">*</span></label>
+        <input type="url" id="git-url" placeholder="https://github.com/username/repo" oninput="validateGit(this)" />
+        <div class="hint" id="git-hint">Only GitHub, GitLab, or Bitbucket URLs allowed</div>
+    </div> --> 
+
+    <div class="divider"></div>
+
+    <!-- Bio -->
+    <div class="field">
+        <label>Profile Bio</label>
+        <textarea id="bio" placeholder="Tell us a little about yourself..."></textarea>
+    </div>
+
+    <!-- Feedback -->
+    <div class="field">
+        <label>Feedback / Message</label>
+        <textarea id="feedback" placeholder="Any suggestions or questions?"></textarea>
+    </div>
+
+    <!-- Referral (disabled) -->
+    <div class="field">
+        <label>Referral Code <span class="badge">Optional</span></label>
+        <input type="text" id="referral" value="SUMMER2025"  />
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Checkboxes -->
+    <div class="field">
+        <div class="checkbox-row">
+            <input type="checkbox" id="terms" />
+            <label for="terms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+        </div>
+    </div>
+    <div class="field">
+        <div class="checkbox-row">
+            <input type="checkbox" id="newsletter" checked />
+            <label for="newsletter">Subscribe to newsletter & updates</label>
+        </div>
+    </div>
+
+    <!-- Submit + Reset -->
+    <div class="btn-row">
+        <button type="button" class="submit-btn" onclick="submitForm()">Submit Application</button>
+        <button type="reset" class="reset-btn">Reset Form</button>
+    </div>
+</div>
+    </form>
+
+
+
+
+</body>
+</html>
